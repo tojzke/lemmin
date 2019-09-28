@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dzboncak <dzboncak@student.42.fr>          +#+  +:+       +#+         #
+#    By: elchrist <elchrist@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/11/24 19:28:38 by bkiehn            #+#    #+#              #
-#    Updated: 2019/08/04 17:22:16 by dzboncak         ###   ########.fr        #
+#    Created: 2019/09/26 19:56:05 by elchrist          #+#    #+#              #
+#    Updated: 2019/09/26 19:57:52 by elchrist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,12 +33,12 @@ FLAGS = -Wall -Wextra -Werror
 
 INC = ./includes
 
-LIBAFERST = make -C $(LIBRARY)
+LIBAFIRST = make -C $(LIBRARY)
 
 LIBRARY = libft
-	
+
 $(NAME): $(OBJS)
-	@$(LIBAFERST)
+	@$(LIBAFIRST)
 	gcc -o $(NAME) $(OBJS) -I $(INC) -L ./$(LIBRARY) -lft -lftprintf
 
 liba:
@@ -58,7 +58,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBRARY) fclean
-	
+
 re: fclean libare $(OBJS)
 	gcc -o $(NAME) $(FLAGS) $(OBJS) -I $(INC) -L ./$(LIBRARY) -lft -lftprintf
 
